@@ -532,4 +532,9 @@ export class ProductListComponent {
       slug: "michael-feburary-sk8-hi"
     }
   ];
+
+  totalprodcount = this.products.length;
+  totalproductinstock = this.products.filter(p => p.is_in_inventory===true).length;
+  totalproductoutofstock = this.products.filter(p => p.is_in_inventory===false).length
+
 }
