@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
+import { Product } from './../../Model/Product';
 @Component({
   selector: 'product-list',
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+
+  selectedProduct: Product;
   products = [
     {
       id: 1,
@@ -535,6 +537,20 @@ export class ProductListComponent {
 
   totalprodcount = this.products.length;
   totalproductinstock = this.products.filter(p => p.is_in_inventory===true).length;
-  totalproductoutofstock = this.products.filter(p => p.is_in_inventory===false).length
+  totalproductoutofstock = this.products.filter(p => p.is_in_inventory===false).length;
+
+
+  @Input()
+  searchText: string ='';
+
+
+  selectedFilterRadioButton: string = 'all';
+
+  
+  onFilterChanged(value: string){
+    // console.log('on filter change called');
+    // console.log(value);               /// getting value from the event using $event as string is got from the selectedFilterRadioButtonChanged
+    this.selectedFilterRadioButton= value;
+  }
 
 }

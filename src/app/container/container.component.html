@@ -19,9 +19,10 @@
 
  <!-- ||||||||||| Now actual project starts ||||||||||||| -->
 
-<app-search></app-search> <!-- 
+<app-search (searchTextChanged)="setsearchText($event)"></app-search> <!-- 
  <div *ngFor="let item of listOfString">
     <p>Current elemenet of array is : {{item}}</p>
 </div> -->
-<product-list></product-list>
+<product-list [searchText]="searchText" #productlistcomponent></product-list>
+<product-detail *ngIf="productlistcomponent.selectedProduct"></product-detail>
 </div>

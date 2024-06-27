@@ -43,4 +43,11 @@ export class ContainerComponent {
     // everything above was just for practice
 
     //listOfString: string[]= ["marse","jupiter","earth"];
+
+
+    searchText: string ='';
+    setsearchText(value: string){
+      this.searchText = value;            // now we have access to users searchtext
+
+    }
  }

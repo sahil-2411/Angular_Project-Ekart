@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -14,4 +14,16 @@ instock: number=0;
 
 @Input()
 outofstock: number=0; 
+
+@Output()          // by using this selectedFilterRadioButtonChanged is binded toparent comp 
+selectedFilterRadioButtonChanged: EventEmitter<string>= new EventEmitter<string>();  // eventt created
+selectedFilterRadioButton: string = 'all';
+
+onSelectedFilterRadioButtonChanged(){                // event raised using method
+  // console.log(this.selectedFilterRadioButton);
+  this.selectedFilterRadioButtonChanged.emit(this.selectedFilterRadioButton);  /////// currently selected valued get using this
 }
+
+}
+
+
