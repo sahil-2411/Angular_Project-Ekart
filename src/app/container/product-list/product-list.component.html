@@ -5,12 +5,13 @@
 >
 </app-filter>
   <div class="ekart--product--container">
-<div *ngFor="let prod of products " (click)="selectedProduct=prod">
+<ng-container
+ *ngFor="let prod of products " >
   <!-- *ngIf="selectedFilterRadioButton === 'all' || prod.is_in_inventory.toString() === selectedFilterRadioButton"  -->   
 
   <!-- added with &&  below -->
 <app-product  [product]="prod" 
-*ngIf="(selectedFilterRadioButton === 'all' || prod.is_in_inventory.toString() === selectedFilterRadioButton)&&(searchText==='' || prod.name.toLowerCase().includes(searchText))">
+*ngIf="(selectedFilterRadioButton === 'all' || prod.is_in_inventory.toString() === selectedFilterRadioButton)&&(searchText==='' || prod.name.toLowerCase().includes(searchText))" (click)="selectedProduct=prod">
 </app-product>
-</div>
+</ng-container>
 </div>
