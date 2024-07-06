@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
 import { TopMenuComponent } from './header/top-menu/top-menu.component';
 import { TopheaderComponent } from './topheader/topheader.component';
+import { FeaturedBrandsComponent } from './container/featured-brands/featured-brands.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TopheaderComponent } from './topheader/topheader.component';
     ProductListComponent,
     ProductComponent,
     FilterComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FeaturedBrandsComponent
   ],
   imports: [
     BrowserModule,
